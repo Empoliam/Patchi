@@ -20,6 +20,15 @@ public class ComplexArrayList<S> {
 	}
 	
 	/**
+	 * Adds an object to the list
+	 *
+	 * @param in object to add
+	 */
+	public void add(S in) {
+		list.add(in);
+	}
+	
+	/**
 	 * Returns the object stored at the given index as it's superclass
 	 *
 	 * @param index index of requested item

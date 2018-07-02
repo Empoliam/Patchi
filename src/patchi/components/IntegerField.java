@@ -2,7 +2,6 @@ package patchi.components;
 
 import java.util.regex.Pattern;
 
-import javafx.scene.control.IndexRange;
 import javafx.scene.control.TextField;
 
 // TODO: Auto-generated Javadoc
@@ -35,8 +34,8 @@ public class IntegerField extends TextField {
 	 * @see javafx.scene.control.TextInputControl#replaceText(javafx.scene.control.IndexRange, java.lang.String)
 	 */
 	@Override
-	public void replaceText(IndexRange range, String text) {
-		if(intPattern.matcher(text).matches()) super.replaceText(range, text);
+	public void replaceText(int start, int end, String text) {
+		if(intPattern.matcher(text).matches()) super.replaceText(start, end, text);
 	}
 	
 	/* (non-Javadoc)

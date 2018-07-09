@@ -46,6 +46,16 @@ public class Vector {
 	}
 	
 	/**
+	 * Creates a new Vector from A to B.
+	 *
+	 * @param A
+	 * @param B
+	 */
+	public Vector(Vector A, Vector B) {
+		this(B.Subtract(A));
+	}
+	
+	/**
 	 * Adds two Vectors.
 	 *
 	 * @param B Vector to add

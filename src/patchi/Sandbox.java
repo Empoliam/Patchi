@@ -1,16 +1,18 @@
 package patchi;
 
-import patchi.math.space.Ray;
-import patchi.math.space.Vector;
+import java.awt.Color;
+
+import patchi.util.PatchiColor;
 
 public class Sandbox {
 
 	public static void main(String[] args) {
 		
-		Ray A = new Ray(new Vector(0,0,0), new Vector(1.2,0.3,0.4));
+		Color A = Color.BLUE;
+		Color B = Color.RED;
 		
-		System.out.println(A.getDirection().mod());
-
+		System.out.println(PatchiColor.blend(A,B));
+		
 	}
 
 }

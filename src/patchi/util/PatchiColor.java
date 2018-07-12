@@ -53,5 +53,44 @@ public final class PatchiColor {
 		return new Color((int)r,(int)g,(int)b);
 		
 	}
+	
+	/**
+	 * Multiply the individual RGB values of A and B by each other.
+	 *
+	 * @param A Color A
+	 * @param B Color B
+	 * @return blended Color
+	 */
+	public static Color multiply(Color A, Color B) {
+		
+		float[] rgbA = A.getRGBColorComponents(null);
+		float[] rgbB = B.getRGBColorComponents(null);
+		
+		float r = rgbA[0] * rgbB[0];
+		float g = rgbA[1] * rgbB[1];
+		float b = rgbA[2] * rgbB[2];
+		
+		return new Color(r,g,b);
+		
+	}
+	
+	/**
+	 * Multiply all of the components of Color A by a given float greater than 0f.
+	 *
+	 * @param A Color A
+	 * @param x scalar multiplier (0.0 - 1.0)
+	 * @return scaled color
+	 */
+	public static Color scalarMultiply(Color A, float x) {
+		
+		if(x < 0) x = 0;
+		float[] rgb = A.getRGBColorComponents(null);
+		
+		return new Color(
+				Math.min(x * rgb[0], 1.0f),
+				Math.min(x * rgb[1], 1.0f),
+				Math.min(x * rgb[2], 1.0f));
+		
+	}
 
 }

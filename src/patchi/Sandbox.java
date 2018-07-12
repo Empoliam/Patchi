@@ -8,10 +8,9 @@ public class Sandbox {
 
 	public static void main(String[] args) {
 		
-		Color A = Color.BLUE;
-		Color B = Color.RED;
+		Color Y = Color.YELLOW;
 		
-		System.out.println(PatchiColor.blend(A,B));
+		System.out.println(PatchiColor.scalarMultiply(Y, 0.5f));
 		
 	}
 

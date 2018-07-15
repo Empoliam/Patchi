@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 import javafx.scene.control.TextField;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * A textfield that only allows integer input, and can return an int rather than a String.
  */

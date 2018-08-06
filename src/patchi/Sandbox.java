@@ -1,16 +1,14 @@
 package patchi;
 
-import java.awt.Color;
-
-import patchi.util.PatchiColor;
+import patchi.math.space.Vector;
 
 public class Sandbox {
 
 	public static void main(String[] args) {
 		
-		Color Y = Color.YELLOW;
+		Vector V = new Vector(0d, 1d, 2d);
 		
-		System.out.println(PatchiColor.scalarMultiply(Y, 0.5f));
+		System.out.println(V.getI(2));
 		
 	}
 

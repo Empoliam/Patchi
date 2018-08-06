@@ -7,10 +7,10 @@ public class Vector {
 
 	/**  X coordinate. */
 	private double x;
-	
+
 	/**  Y coordinate. */
 	private double y;
-	
+
 	/**  Z cordinate. */
 	private double z;
 
@@ -18,7 +18,7 @@ public class Vector {
 	public String toString() {
 		return x + "," + y + "," + z;
 	}
-	
+
 	/**
 	 * Create a new Vector with the specified direction.
 	 *
@@ -33,7 +33,7 @@ public class Vector {
 		this.z = z;
 
 	}
-	
+
 	/**
 	 * Clones a new Vector from the given Vector.
 	 *
@@ -44,7 +44,7 @@ public class Vector {
 		this.y = C.getY();
 		this.z = C.getZ();
 	}
-	
+
 	/**
 	 * Creates a new Vector from A to B.
 	 *
@@ -54,7 +54,7 @@ public class Vector {
 	public Vector(Vector A, Vector B) {
 		this(B.Subtract(A));
 	}
-	
+
 	/**
 	 * Adds two Vectors.
 	 *
@@ -67,7 +67,7 @@ public class Vector {
 				y + B.getY(),
 				z + B.getZ());
 	}
-		
+
 	/**
 	 * Subtract the paramater Vector from this Vector.
 	 *
@@ -77,7 +77,7 @@ public class Vector {
 	public Vector Subtract(Vector B) {
 		return this.add(B.negate());
 	}
-	
+
 	/**
 	 * Negate this Vector.
 	 *
@@ -86,7 +86,7 @@ public class Vector {
 	public Vector negate() {
 		return new Vector(-x,-y,-z);
 	}	
-	
+
 	/**
 	 * Multiply this Vector by a scalar.
 	 *
@@ -99,7 +99,7 @@ public class Vector {
 				y * m,
 				z * m);
 	}
-	
+
 	/**
 	 * Dot this Vector with the parameter Vector.
 	 *
@@ -107,11 +107,11 @@ public class Vector {
 	 * @return resultant dot product
 	 */
 	public double dot(Vector B) {
-		
+
 		return (x*B.getX()) + (y*B.getY()) + (z*B.getZ());
-		
+
 	}
-	
+
 	/**
 	 * Cross this Vector with the parameter Vector.
 	 *
@@ -119,15 +119,15 @@ public class Vector {
 	 * @return resultant Vector
 	 */
 	public Vector cross(Vector B) {
-		
+
 		double cx = (y * B.getZ()) - (z * B.getY());
 		double cy = -((x*B.getZ()) - (z * B.getX()));
 		double cz = (x * B.getY()) - (y * B.getX());
-		
+
 		return new Vector(cx,cy,cz);
-		
+
 	}
-	
+
 	/**
 	 * Calculate the length of this Vector.
 	 *
@@ -136,19 +136,19 @@ public class Vector {
 	public double mod() {
 		return Math.sqrt(x*x + y*y + z*z);
 	}
-	
+
 	/**
 	 * Normalize the given Vector.
 	 *
 	 * @return normalized Vector
 	 */
 	public Vector normalize() {
-		
+
 		double n = 1 / mod();
 		return new Vector(scalarMult(n));
-		
+
 	}
-	
+
 	/**
 	 * Sets the x-direction.
 	 *
@@ -157,7 +157,7 @@ public class Vector {
 	public void setX(double x) {
 		this.x = x;
 	}
-	
+
 	/**
 	 * Returns the x-direction.
 	 *
@@ -175,7 +175,7 @@ public class Vector {
 	public void setY(double y) {
 		this.y = y;
 	}
-	
+
 	/**
 	 * Returns the y-direction.
 	 *
@@ -193,7 +193,7 @@ public class Vector {
 	public void setZ(double z) {
 		this.z = z;
 	}
-	
+
 	/**
 	 * Returns the z-direction.
 	 *
@@ -201,6 +201,28 @@ public class Vector {
 	 */
 	public double getZ() {
 		return z;
+	}
+
+	/**
+	 * returns the requested direction by index. 
+	 * 
+	 * @param index 0 : x
+	 * 				1 : y
+	 * 				2 : z
+	 * @return requested coordinate
+	 */
+	public double getI(int index) {
+		
+		switch (index) {
+		
+		case 0 : return x;
+		case 1 : return y;
+		case 2 : return z;
+		
+		}
+		
+		return Double.NaN;
+		
 	}
 
 }

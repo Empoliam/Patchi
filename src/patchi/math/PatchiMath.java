@@ -15,7 +15,7 @@ public final class PatchiMath {
 	 *
 	 * @param n Number of trials
 	 * @param p Probability of sucess
-	 * @param RANDOM Project wide Math.Random object
+	 * @param RANDOM util.Random to be used
 	 * @return Generated int
 	 */
 	public static int generateBinomialInt(int n, double p, Random RANDOM) {
@@ -25,6 +25,20 @@ public final class PatchiMath {
 			if(RANDOM.nextDouble() < p) x++;
 		}
 
+		return x;
+
+	}
+	
+	/**
+	 * Generates an int with binomial probability distribution. Uses a randomly generated seed.
+	 *
+	 * @param n Number of trials
+	 * @param p Probability of sucess
+	 * @return Generated int
+	 */
+	public static int generateBinomialInt(int n, double p) {
+
+		int x = generateBinomialInt(n, p, new Random());
 		return x;
 
 	}

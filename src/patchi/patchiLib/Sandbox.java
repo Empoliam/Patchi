@@ -1,6 +1,6 @@
-package patchi;
+package patchi.patchiLib;
 
-import patchi.math.space.Vector;
+import patchi.patchiLib.math.space.Vector;
 
 public class Sandbox {
 

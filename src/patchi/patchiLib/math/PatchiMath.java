@@ -1,4 +1,4 @@
-package patchi.math;
+package patchi.patchiLib.math;
 
 import java.util.Random;
 

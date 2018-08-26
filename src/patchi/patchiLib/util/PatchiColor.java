@@ -1,4 +1,4 @@
-package patchi.util;
+package patchi.patchiLib.util;
 
 import java.awt.Color;
 

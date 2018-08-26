@@ -1,4 +1,4 @@
-package patchi.components;
+package patchi.patchiLib.components;
 
 import java.util.regex.Pattern;
 

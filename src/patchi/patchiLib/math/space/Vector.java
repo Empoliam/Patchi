@@ -1,4 +1,4 @@
-package patchi.math.space;
+package patchi.patchiLib.math.space;
 
 /**
  *	A Vector in 3D space.

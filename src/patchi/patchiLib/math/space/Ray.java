@@ -1,4 +1,4 @@
-package patchi.math.space;
+package patchi.patchiLib.math.space;
 
 /**
  *	Describes a vector with a given direction and origin

@@ -1,0 +1,19 @@
+<assembly>
+    <id>dist</id>
+    <!-- Specifies that our binary distribution is a zip package -->
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <baseDirectory>PatchiLib</baseDirectory>
+
+    <files>
+        <file>
+            <source>target/${project.artifactId}-${project.version}.jar</source>
+            <outputDirectory></outputDirectory>
+        </file>
+    </files>
+
+
+</assembly>

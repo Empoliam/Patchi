@@ -25,12 +25,12 @@ public final class MilliFormatter {
 		String s = new DecimalFormat("##0E0").format(in);
 		int exp = Integer.parseInt(s.substring(s.indexOf('E')+1,s.length()));
 
-		System.out.println(s);
-		
 		char suffix = ' ';
 
-		if(exp != 0) {
+		if(exp > 0) {
 			suffix = FORMATS[exp/3 - 1];
+		} else if(exp < 0) {
+			s = "0E0";
 		}
 
 		s = s.substring(0,s.indexOf("E"));

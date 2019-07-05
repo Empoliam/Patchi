@@ -23,30 +23,37 @@ public final class MilliFormatter {
 	public static String format(Float in, int length) {
 
 		String s = new DecimalFormat("##0E0").format(in);
-		int exp = Integer.parseInt(s.substring(s.indexOf('E')+1,s.length()));
 
-		char suffix = ' ';
-
-		if(exp > 0) {
-			suffix = FORMATS[exp/3 - 1];
-		} else if(exp < 0) {
-			s = "0E0";
-		}
-
-		s = s.substring(0,s.indexOf("E"));
-
-		if(s.length() > length-1) {
-			s = s.substring(0,length-1);
-		}
-		
 		try {
-			if(s.charAt(length-2) == '.') {
-				s = s.substring(0,length-2);
-			}
-		} catch (StringIndexOutOfBoundsException e) {
+			int exp = Integer.parseInt(s.substring(s.indexOf('E')+1,s.length()));
 
+			char suffix = ' ';
+
+			if(exp > 0) {
+				suffix = FORMATS[exp/3 - 1];
+			} else if(exp < 0) {
+				s = "0E0";
+			}
+
+			s = s.substring(0,s.indexOf("E"));
+
+			if(s.length() > length-1) {
+				s = s.substring(0,length-1);
+			}
+
+			try {
+				if(s.charAt(length-2) == '.') {
+					s = s.substring(0,length-2);
+				}
+			} catch (StringIndexOutOfBoundsException e) {
+
+			}
+			s = s + suffix;
+		} catch (NumberFormatException e){
+			
+			s = "NULL";
+			
 		}
-		s = s + suffix;
 
 		return s;
 

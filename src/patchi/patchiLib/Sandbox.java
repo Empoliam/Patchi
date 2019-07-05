@@ -1,14 +1,15 @@
 package patchi.patchiLib;
 
-import patchi.patchiLib.math.space.Vector;
+import patchi.patchiLib.math.MilliFormatter;
 
-public class Sandbox {
+public abstract class Sandbox {
 
 	public static void main(String[] args) {
 		
-		Vector V = new Vector(0d, 1d, 2d);
-		
-		System.out.println(V.getI(2));
+		float f = 511111f;
+		String s = MilliFormatter.format(f, 8);
+
+		System.out.println(s);
 		
 	}
 

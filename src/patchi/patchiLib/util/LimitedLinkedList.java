@@ -1,5 +1,6 @@
 package patchi.patchiLib.util;
 
+import java.util.Collection;
 import java.util.LinkedList;
 
 public class LimitedLinkedList<E> extends LinkedList<E> {
@@ -10,6 +11,15 @@ public class LimitedLinkedList<E> extends LinkedList<E> {
 	
 	public LimitedLinkedList(int l) {
 		this.LIMIT = l;
+	}
+	
+	public LimitedLinkedList(Collection<E> data, int l) {
+		this(l);
+		
+		for(E e : data) {
+			this.add(e);
+		}
+		
 	}
 	
 	@Override
